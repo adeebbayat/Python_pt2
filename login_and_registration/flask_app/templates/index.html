@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email</title>
+    <title>Login</title>
 </head>
 <body>
-    <form action="/register" method="post">
+    <form action="/register/user" method="post">
+
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name">
+
+        <label for="last_name">Last Name::</label>
+        <input type="text" name="last_name">
+
         <label for="email">Email:</label>
         <input type="text" name="email">
-        <input type="submit" value="Add Email">
+
+        <label for="password">Password:</label>
+        <input type="text" name="password">
+
+        <label for="conf_password">Confirm Password:</label>
+        <input type="text" name="conf_password">
+
+        <input type="submit" value="Register">
     </form>
     {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
     {% if messages %}<!-- check if there are any messages -->
