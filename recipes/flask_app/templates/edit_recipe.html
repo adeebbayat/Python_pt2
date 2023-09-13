@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <div id="leftSide">
+        <h1>Edit Recipe!</h1>
+        <form action="/register/user" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+            </div>
+                <label for="description">Description</label>
+                <input type="text" name="description">
+            <div>
+                <label for="instructions">Instructions:</label>
+                <input type="text" name="instructions">
+            </div>
+                <label for="created_at">Date Cooked/Made:</label>
+                <input type="text" name="created_at">
+            <div>
+                <label for="under">Under 30 Minutes?</label>
+                <input type="text" name="under">
+            </div>
+                <input type="submit" value="submit">
+            </form>
+    </div>
+</body>
+</html>

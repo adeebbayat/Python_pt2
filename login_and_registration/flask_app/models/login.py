@@ -18,8 +18,8 @@ class Login:
 
     @classmethod
     def save(cls,data):
-        query = """INSERT INTO logins (email,password) 
-        VALUES (%(username)s,%(password)s);"""
+        query = """INSERT INTO logins (first_name,last_name,email,password) 
+        VALUES (%(first_name)s,%(last_name)s,%(username)s,%(password)s);"""
         return connectToMySQL("login_and_registration_schema").query_db(query, data)
 
     @classmethod
@@ -44,10 +44,10 @@ class Login:
         if not EMAIL_REGEX.match(login['email']): 
             flash("Invalid email address!")
             is_valid = False
-        if len(dojo['password']) < 8:
-            flash("Language must be at least 8 characters.")
+        if len(login['password']) < 8:
+            flash("Password must be at least 8 characters.")
             is_valid = False
-        if dojo['conf_password'] != dojo['password']:
+        if login['conf_password'] != login['password']:
             flash("Password must match")
             is_valid = False
         return is_valid
